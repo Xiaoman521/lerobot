@@ -1,0 +1,17 @@
+lerobot-train \
+  --policy.type smolvla \
+  --policy.pretrained_path /home/xiaoman/.cache/huggingface/hub/models--lerobot--smolvla_base/snapshots/c83c3163b8ca9b7e67c509fffd9121e66cb96205 \
+  --dataset.repo_id local/build_3Dprint_ \
+  --dataset.root /home/xiaoman/Code/Flexiv_DATA/build_3Dprint_ \
+  --batch_size 64 \
+  --steps 50000 \
+  --output_dir outputs/train/smolvla_finetuned_1_29 \
+  --job_name smolvla_finetuning_1_29 \
+  --policy.device cuda \
+  --policy.optimizer_lr 1e-4 \
+  --policy.scheduler_warmup_steps 1000 \
+  --policy.push_to_hub false \
+  --save_checkpoint true \
+  --save_freq 10000 \
+  --wandb.enable off \
+  --wandb.project smolvla_finetuning_1_29
